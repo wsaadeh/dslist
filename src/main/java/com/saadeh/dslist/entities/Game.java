@@ -15,21 +15,27 @@ package com.saadeh.dslist.entities;
 	    @Column(name = "game_year")
 	    private Integer year;
 	    private String genre;
-	    private String plataform;
+	    private String platforms;
+	    private Double score;
 	    private String imgUrl;
+	    
+	    @Column(columnDefinition = "TEXT")
 	    private String shortDescription;
+	    
+	    @Column(columnDefinition = "TEXT")
 	    private String longDescription;
 
 	    public Game(){
 
 	    }
 
-	    public Game(Long id, String title, Integer year, String genre, String plataform, String imgUrl, String shortDescription, String longDescription) {
+	    public Game(Long id, String title, Integer year, String genre, String plataform,Double score, String imgUrl, String shortDescription, String longDescription) {
 	        this.id = id;
 	        this.title = title;
 	        this.year = year;
 	        this.genre = genre;
-	        this.plataform = plataform;
+	        this.platforms = platforms;
+	        this.score = score;
 	        this.imgUrl = imgUrl;
 	        this.shortDescription = shortDescription;
 	        this.longDescription = longDescription;
@@ -67,15 +73,23 @@ package com.saadeh.dslist.entities;
 	        this.genre = genre;
 	    }
 
-	    public String getPlataform() {
-	        return plataform;
+	    public String getPlataforms() {
+	        return platforms;
 	    }
 
-	    public void setPlataform(String plataform) {
-	        this.plataform = plataform;
+	    public void setPlataforms(String platforms) {
+	        this.platforms = platforms;
 	    }
+	    	    
+	    public Double getScore() {
+			return score;
+		}
 
-	    public String getImgUrl() {
+		public void setScore(Double score) {
+			this.score = score;
+		}
+
+		public String getImgUrl() {
 	        return imgUrl;
 	    }
 
@@ -97,7 +111,8 @@ package com.saadeh.dslist.entities;
 
 	    public void setLongDescription(String longDescription) {
 	        this.longDescription = longDescription;
-	    }
+	    }	    
+	    
 
 	    @Override
 	    public boolean equals(Object o) {
